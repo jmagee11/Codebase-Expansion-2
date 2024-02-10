@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0246bf19343a4d63b539aeb9235cfce3, type: 3}
+  m_Name: hell_b_to_heaven
+  m_EditorClassIdentifier: 
+  affinity: 0
+  leftBorder: {fileID: 8044955593797859511, guid: 392985515e2caf9459e20628b4caddfd, type: 3}
+  rightBorder: {fileID: 2106008242244264178, guid: a3f197a3e0bc0424fad02d3f4a268689, type: 3}
+  background: {fileID: 4177734653903292915, guid: 1ed3dc84f752a354280e094a77f6827f, type: 3}
+  enemySpawnPotential: []
+  requiredFollowUp:
+  - {fileID: 11400000, guid: ebab6b7533e2cb6498fe8952a8276d6b, type: 2}

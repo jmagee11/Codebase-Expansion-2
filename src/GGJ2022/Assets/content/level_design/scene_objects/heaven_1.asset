@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0246bf19343a4d63b539aeb9235cfce3, type: 3}
+  m_Name: heaven_1
+  m_EditorClassIdentifier: 
+  affinity: 0
+  leftBorder: {fileID: 8136107357643920250, guid: f8985fc69abfc464e93622f6736274d5, type: 3}
+  rightBorder: {fileID: 8807666426227939184, guid: c9980dca5e268b74c8e6b011222df529, type: 3}
+  background: {fileID: 4964934501440047299, guid: cf843940d631da34f9cc4bf52538bede, type: 3}
+  enemySpawnPotential:
+  - spawnChance: 5
+    spawner: {fileID: 8643406873036299900, guid: ea2767dd2d6e11e4bbe52a27e86236ee, type: 3}
+  - spawnChance: 3
+    spawner: {fileID: 8643406873036299900, guid: 4a56f7c421b53ef4b930fd70166d5ae5, type: 3}
+  - spawnChance: 2
+    spawner: {fileID: 8643406873036299900, guid: eae8ee7145285d540b2972b96b9f479c, type: 3}
+  - spawnChance: 1
+    spawner: {fileID: 8643406873036299900, guid: efffe1a2c6196ab469a180b5eb42bd09, type: 3}
+  requiredFollowUp:
+  - {fileID: 11400000, guid: abbd2150d755ad6458f4bac20c041e9d, type: 2}

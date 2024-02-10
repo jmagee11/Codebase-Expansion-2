@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3064471419430222223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2176623341132431393}
+  m_Layer: 0
+  m_Name: white_hail_storm_spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2176623341132431393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064471419430222223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3896282468752793071}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4473023772187311959
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2176623341132431393}
+    m_Modifications:
+    - target: {fileID: -2851637158928275179, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2851637158928275179, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2851637158928275179, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5167292251466587456}
+    - target: {fileID: -2851637158928275179, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2851637158928275179, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: -2851637158928275179, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: util.sound.SfxSoundLibraryUser, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -2851637158928275179, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9652053
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.2614931
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 30.317
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: width
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: waitMax
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: waitMin
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: duration
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: angleOffset
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: triggerSound.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: triggerSound.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: triggerSound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5167292251466587456}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: triggerSound.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: triggerSound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: triggerSound.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: util.sound.SfxSoundLibraryUser, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840529201790065501, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: triggerSound.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744255010441535977, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+      propertyPath: m_Name
+      value: WhiteHailStorm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+--- !u!1 &8188931794578054846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5744255010441535977, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+  m_PrefabInstance: {fileID: 4473023772187311959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3896282468752793071 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 576811672531739320, guid: 14ed7c53ae97ba0458b75945becd6626, type: 3}
+  m_PrefabInstance: {fileID: 4473023772187311959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5167292251466587456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188931794578054846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa0b51125854593b56c0f9725c34015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11400000, guid: 6bb33e23dda957e4bbeec8d872a4f720, type: 2}
+  sound: enemy/hailstorm

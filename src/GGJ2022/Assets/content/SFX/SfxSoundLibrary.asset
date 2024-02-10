@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5923708588eb486e8e97ba6ec8333edf, type: 3}
+  m_Name: SfxSoundLibrary
+  m_EditorClassIdentifier: 
+  bundles:
+  - sfxName: player/shooting
+    selectionMethod: 1
+    sfx:
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: ccbe7ddb32e064e609c488c3b1d4416f, type: 3}
+      minPitch: 0.8
+      maxPitch: 1.1
+      minVolume: 0.4
+      maxVolume: 0.5
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: fab460e3b171e44a0970f23bbd4bf054, type: 3}
+      minPitch: 0.8
+      maxPitch: 1.1
+      minVolume: 0.4
+      maxVolume: 0.5
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 500d3e6be78a94064badd923df69cba6, type: 3}
+      minPitch: 0.8
+      maxPitch: 1.1
+      minVolume: 0.4
+      maxVolume: 0.5
+  - sfxName: player/split
+    selectionMethod: 1
+    sfx:
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: f6e04906aebee4e3da8f8222dfe6a3b6, type: 3}
+      minPitch: 1
+      maxPitch: 1
+      minVolume: 0.84
+      maxVolume: 1
+  - sfxName: player/glue
+    selectionMethod: 1
+    sfx:
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: a77484d6b52b041d3ac56cc96a52f814, type: 3}
+      minPitch: 1
+      maxPitch: 1
+      minVolume: 0.74
+      maxVolume: 0.8
+  - sfxName: gameover
+    selectionMethod: 1
+    sfx:
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 844b942fe5ef846d99ca580fbbc8acfe, type: 3}
+      minPitch: 1
+      maxPitch: 1
+      minVolume: 0.3
+      maxVolume: 0.3
+  - sfxName: enemy/white
+    selectionMethod: 1
+    sfx:
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 144f973ede01a42d882455e9e93c6d61, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: d616f28df67b3440da167dcaa856a888, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 6783ebeb427a54a18b5c6ea2afb59343, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 32b15f5de4e9444ddb9eceda3a4c66b9, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+  - sfxName: enemy/red
+    selectionMethod: 1
+    sfx:
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: c927f77b3f30248c0964351f98bab29c, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 6d2cd0bdc227e4c5cb70243db8b813e4, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: ad6810b6122dd4dbe890aad103e90b83, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: c3dc0284a38104794ad159b259542969, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+  - sfxName: enemy/hit
+    selectionMethod: 1
+    sfx:
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: d386960c00e724db69eb1a0736556cb1, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.78
+      maxVolume: 0.96
+  - sfxName: enemy/hailstorm
+    selectionMethod: 1
+    sfx:
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 81638a1738e2b491aaa74dea494fdee1, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.1
+      maxVolume: 0.2
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 8b128f452f7b94504bdf10ba1acc0638, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.1
+      maxVolume: 0.2
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 25d595e3e826e42408e25ae5fb74e39b, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.1
+      maxVolume: 0.2
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 323eac118600e4616a34fa6c6174d5e1, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.1
+      maxVolume: 0.2
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 9cc946c225ae94ba38c16f19d64f97d9, type: 3}
+      minPitch: 0.1
+      maxPitch: 0.2
+      minVolume: 0.1
+      maxVolume: 0.2
+    - _serielizedVersion: 1
+      clip: {fileID: 8300000, guid: 9416269acb1a44b4ab1a124ff8f007d1, type: 3}
+      minPitch: 0.7
+      maxPitch: 1.3
+      minVolume: 0.1
+      maxVolume: 0.2
