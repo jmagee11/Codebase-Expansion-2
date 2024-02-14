@@ -13,11 +13,13 @@ public class GameStateHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI highscores_lost;
     [SerializeField] private TextMeshProUGUI playerName;
     [SerializeField] private GameObject gameOverMenu;
+
+    [SerializeField] GameObject healthBar;
+
     public float PlayerHealth;
     private bool m_InGame;
 
     public UnityEvent<bool> onIngame;
-    public UnityEvent<float> onHealth;
     public UnityEvent onDeath;
 
     [SerializeField]
@@ -27,7 +29,8 @@ public class GameStateHandler : MonoBehaviour
     void Start()
     {
         PlayerHealth = 0.5f;
-        onHealth.Invoke(PlayerHealth);
+        EliasManager.instance.MusicLevel();
+        healthBar.GetComponent<FloatAnimator>().OnFloatInput(PlayerHealth);
         StartCoroutine(FirstDisableDelay()); // For whatever reason teh firt menu animation is strange otherwise
     }
 
@@ -46,7 +49,8 @@ public class GameStateHandler : MonoBehaviour
     public void RestartGame()
     {
         PlayerHealth = 0.5f;
-        onHealth.Invoke(PlayerHealth);
+        EliasManager.instance.MusicLevel();
+        healthBar.GetComponent<FloatAnimator>().OnFloatInput(PlayerHealth);
         gameOverMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -72,7 +76,9 @@ public class GameStateHandler : MonoBehaviour
             return;
 
         PlayerHealth += isRed ? damage : -damage;
-        onHealth.Invoke(PlayerHealth);
+
+        EliasManager.instance.MusicLevel();
+        healthBar.GetComponent<FloatAnimator>().OnFloatInput(PlayerHealth);
         if (PlayerHealth >= 1f || PlayerHealth <= 0f)
             Lost();
     }

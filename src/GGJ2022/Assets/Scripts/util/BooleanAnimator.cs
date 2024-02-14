@@ -23,6 +23,6 @@ public class BooleanAnimator : MonoBehaviour
     public void OnBooleanInput(InputAction.CallbackContext context)
         => OnBooleanInput(context.ReadValueAsButton());
     
-    public void OnBooleanInput(bool context)
+    public void OnBooleanInput(bool context) 
         => animator.SetBool(animatorParameterID, context != inverse);
 }

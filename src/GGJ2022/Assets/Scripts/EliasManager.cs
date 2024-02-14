@@ -35,37 +35,37 @@ public class EliasManager : MonoBehaviour
                 actionPresetExclusion = "IntroLevel2";
             }
 
-            if (introEnemiesDestroyed == 2 && actionPresetExclusion != "IntroLevel3")
+            else if (introEnemiesDestroyed == 2 && actionPresetExclusion != "IntroLevel3")
             {
                 EliasPlayer.instance.RunActionPreset("IntroLevel3");
                 actionPresetExclusion = "IntroLevel3";
             }
 
-            if (introEnemiesDestroyed == 31 && actionPresetExclusion != "IntroLevel4")
+            else if (introEnemiesDestroyed == 31 && actionPresetExclusion != "IntroLevel4")
             {
                 EliasPlayer.instance.RunActionPreset("IntroLevel4");
                 actionPresetExclusion = "IntroLevel4";
             }
 
-            if (introEnemiesDestroyed == 41 && actionPresetExclusion != "IntroLevel5")
+            else if (introEnemiesDestroyed == 41 && actionPresetExclusion != "IntroLevel5")
             {
                 EliasPlayer.instance.RunActionPreset("IntroLevel5");
                 actionPresetExclusion = "IntroLevel5";
             }
 
-            if (introEnemiesDestroyed == 5 && actionPresetExclusion != "IntroLevel6")
+            else if (introEnemiesDestroyed == 5 && actionPresetExclusion != "IntroLevel6")
             {
                 EliasPlayer.instance.RunActionPreset("IntroLevel6");
                 actionPresetExclusion = "IntroLevel6";
             }
 
-            if (introEnemiesDestroyed == 6 && actionPresetExclusion != "IntroLevel7")
+            else if (introEnemiesDestroyed == 6 && actionPresetExclusion != "IntroLevel7")
             {
                 EliasPlayer.instance.RunActionPreset("IntroLevel7");
                 actionPresetExclusion = "IntroLevel7";
             }
 
-            if (introEnemiesDestroyed == 7 && actionPresetExclusion != "ToGameLoopBalanced")
+            else if (introEnemiesDestroyed == 7 && actionPresetExclusion != "ToGameLoopBalanced")
             {
                 EliasPlayer.instance.RunActionPreset("ToGameLoopBalanced");
                 actionPresetExclusion = "ToGameLoopBalanced";
@@ -80,25 +80,25 @@ public class EliasManager : MonoBehaviour
                 EliasPlayer.instance.RunActionPreset("ToLevel1");
             }
 
-            if (PlayerHealth >= 0.61f && PlayerHealth <= 0.8f && actionPresetExclusion != "ToLevel2")
+            else if (PlayerHealth >= 0.61f && PlayerHealth <= 0.8f && actionPresetExclusion != "ToLevel2")
             {
                 actionPresetExclusion = "ToLevel2";
                 EliasPlayer.instance.RunActionPreset("ToLevel2");
             }
 
-            if (PlayerHealth >= 0.4f && PlayerHealth <= 0.6f && actionPresetExclusion != "ToLevel3")
+            else if (PlayerHealth >= 0.4f && PlayerHealth <= 0.6f && actionPresetExclusion != "ToLevel3")
             {
                 actionPresetExclusion = "ToLevel3";
                 EliasPlayer.instance.RunActionPreset("ToLevel3");
             }
 
-            if (PlayerHealth >= 0.21f && PlayerHealth <= 0.39f && actionPresetExclusion != "ToLevel4")
+            else if (PlayerHealth >= 0.21f && PlayerHealth <= 0.39f && actionPresetExclusion != "ToLevel4")
             {
                 actionPresetExclusion = "ToLevel4";
                 EliasPlayer.instance.RunActionPreset("ToLevel4");
             }
 
-            if (PlayerHealth >= 0.1f && PlayerHealth <= 0.2f && actionPresetExclusion != "ToLevel5")
+            else if (PlayerHealth >= 0.1f && PlayerHealth <= 0.2f && actionPresetExclusion != "ToLevel5")
             {
                 actionPresetExclusion = "ToLevel5";
                 EliasPlayer.instance.RunActionPreset("ToLevel5");
@@ -118,12 +118,12 @@ public class EliasManager : MonoBehaviour
             EliasPlayer.instance.RunActionPreset("IntroStart");
         }
 
-        if (activeTheme == "GameLoop")
+        else if (activeTheme == "GameLoop")
         {
             EliasPlayer.instance.RunActionPreset("GameOverGameLoop");
         }
 
-        if (activeTheme == "TooBright")
+        else if (activeTheme == "TooBright")
         {
             EliasPlayer.instance.RunActionPreset("GameOverTooBright");
         }
