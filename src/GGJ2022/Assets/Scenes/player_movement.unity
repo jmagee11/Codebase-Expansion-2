@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6407786652210162969, guid: 4f0ef0de06d4c84499c73922c4204a92, type: 3}
   m_PrefabInstance: {fileID: 1218302022}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1689284619}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bb26f9991bc72146bf03175f45399ee, type: 3}
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1339573714871236627, guid: 4f0ef0de06d4c84499c73922c4204a92, type: 3}
   m_PrefabInstance: {fileID: 1218302022}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1689284619}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dbd52d70d7f4959bf7b4bd83caf4043, type: 3}
@@ -1384,121 +1384,15 @@ MonoBehaviour:
   playerName: {fileID: 1766689802}
   gameOverMenu: {fileID: 1737277158}
   healthBar: {fileID: 810703105}
+  player: {fileID: 1541137478}
+  sceneryManager: {fileID: 238327168}
+  gameOver: {fileID: 1737277158}
+  gameOverSound: {fileID: 2047366414}
+  ui: {fileID: 1689284619}
+  play: {fileID: 1068213063}
+  controls: {fileID: 1008868793}
+  highscore: {fileID: 1141714162}
   PlayerHealth: 0.99
-  onIngame:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 238327169}
-        m_TargetAssemblyTypeName: scenes.LevelSceneryManager, Assembly-CSharp
-        m_MethodName: EnableEnemySpawning
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 777618588}
-        m_TargetAssemblyTypeName: BooleanAnimator, Assembly-CSharp
-        m_MethodName: OnBooleanInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1541137478}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1541137489}
-        m_TargetAssemblyTypeName: util.OnEnableAnimatorReset, Assembly-CSharp
-        m_MethodName: ResetAnimator
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1541137478}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 238327169}
-        m_TargetAssemblyTypeName: scenes.LevelSceneryManager, Assembly-CSharp
-        m_MethodName: EnableEnemySpawning
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 887474716}
-        m_TargetAssemblyTypeName: GameStateHandler, Assembly-CSharp
-        m_MethodName: UpdateHighScores
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1737277158}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2047366415}
-        m_TargetAssemblyTypeName: util.sound.SfxSoundLibraryUser, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   inputManage: {fileID: 1683959325}
 --- !u!4 &887474717
 Transform:
@@ -1527,6 +1421,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb26f9991bc72146bf03175f45399ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1008868793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 632384283798086860, guid: 4f0ef0de06d4c84499c73922c4204a92, type: 3}
+  m_PrefabInstance: {fileID: 1218302022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1010035895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1810,6 +1709,10 @@ PrefabInstance:
     - target: {fileID: 2056400617671182510, guid: a25fedeea15611b4db75ddc51a21048e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057845514063502178, guid: a25fedeea15611b4db75ddc51a21048e, type: 3}
+      propertyPath: animatorParameter
+      value: dash_left
       objectReference: {fileID: 0}
     - target: {fileID: 5080557738195985930, guid: a25fedeea15611b4db75ddc51a21048e, type: 3}
       propertyPath: m_TagString
@@ -2112,6 +2015,11 @@ MonoBehaviour:
 Animator:
   m_CorrespondingSourceObject: {fileID: 6068592265574343738, guid: a25fedeea15611b4db75ddc51a21048e, type: 3}
   m_PrefabInstance: {fileID: 1010035895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1068213063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 354590667476128151, guid: 4f0ef0de06d4c84499c73922c4204a92, type: 3}
+  m_PrefabInstance: {fileID: 1218302022}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1089903632 stripped
 RectTransform:
@@ -3396,17 +3304,6 @@ MonoBehaviour:
   animator: {fileID: 1021021793}
   animatorParameter: dash_up
   inverse: 0
---- !u!114 &1541137489 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6297170263890243726, guid: a25fedeea15611b4db75ddc51a21048e, type: 3}
-  m_PrefabInstance: {fileID: 1010035895}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541137478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379080f605824c3c80dcee02bc2a4f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1555491612
 GameObject:
   m_ObjectHideFlags: 0
@@ -3793,6 +3690,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1689284619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8823273365885075924, guid: 4f0ef0de06d4c84499c73922c4204a92, type: 3}
+  m_PrefabInstance: {fileID: 1218302022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1737277158
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using util.sound;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
@@ -8,9 +9,10 @@ public class Enemy : MonoBehaviour
     public int enemyValue = 1;
     public float damage = 0.1f;
     public bool isRed;
-    public UnityEvent<int> onKill;
-    public UnityEvent onHit;
-    public UnityEvent<float, bool> onCrash;
+
+    //libray to use in replacing sound events
+    [SerializeField] SfxSoundLibrary library;
+    [SerializeField] GameObject manager;
 
     public int lives = 3;
     public GameObject onDeathEffect;
@@ -22,20 +24,41 @@ public class Enemy : MonoBehaviour
         {
             // Deal damage from every color
             // if (other.GetComponent<PlayerWing>().isRed ^ isRed)
-            onCrash.Invoke(damage, isRed);
+            //replace onCrash here
+            GameObject.Find("GameState").GetComponent<GameStateHandler>().DamagePlayer(damage, isRed);
+            if (isRed)
+            {
+                library.PlayNextSound("enemy/red", transform.position);
+            }
+            else
+            {
+                library.PlayNextSound("enemy/white", transform.position);
+            }
+
+
             Delete();
         }
         else if (other.CompareTag("PlayerProjectile"))
         {
-            onHit.Invoke();
-            if(other.gameObject.GetComponent<Affinity>() && other.gameObject.GetComponent<Affinity>().isRed == isRed)
+            //replace onHit here
+            library.PlayNextSound("enemy/hit", transform.position);
+            if (other.gameObject.GetComponent<Affinity>() && other.gameObject.GetComponent<Affinity>().isRed == isRed)
                 return;
             
             
             --lives;
             if (lives <= 0)
             {
-                onKill.Invoke(enemyValue);
+                //replace onKill here
+                GameObject.Find("GameState").GetComponent<GameStateHandler>().IncrementScore(enemyValue);
+                if (isRed)
+                {
+                    library.PlayNextSound("enemy/red", transform.position);
+                }
+                else
+                {
+                    library.PlayNextSound("enemy/white", transform.position);
+                }
                 EliasManager.instance.introEnemiesDestroyed++;
                 EliasManager.instance.MusicLevel();
                 Delete();

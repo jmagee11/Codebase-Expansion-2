@@ -121,6 +121,7 @@ namespace scenes
             }
         }
 
+
         private void SearchForEnemyScripts(GameObject go)
         {
             foreach (Transform child in go.transform)
@@ -128,12 +129,7 @@ namespace scenes
                 SearchForEnemyScripts(child.gameObject);
             }
 
-            var enemy = go.GetComponent<Enemy>();
-            if (null != enemy)
-            {
-                enemy.onKill.AddListener(gameState.IncrementScore);
-                enemy.onCrash.AddListener(gameState.DamagePlayer);
-            }
+            
         }
     }
 }

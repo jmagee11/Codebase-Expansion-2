@@ -35,11 +35,6 @@ namespace enemies
                 p.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + Random.Range(-angleOffset, angleOffset));
 
                 var shotEnemy = p.GetComponent<Enemy>();
-                if (null != shotEnemy && null != parentEnemy)
-                {
-                    shotEnemy.onCrash.AddListener(parentEnemy.onCrash.Invoke);
-                    shotEnemy.onKill.AddListener(parentEnemy.onKill.Invoke);
-                }
 
                 yield return new WaitForSeconds(Random.Range(waitMin, waitMax));
                 triggerSound.Invoke();

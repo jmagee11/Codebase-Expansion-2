@@ -1,10 +1,13 @@
+using scenes;
 using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using util;
+using util.sound;
 
 public class GameStateHandler : MonoBehaviour
 {
@@ -14,13 +17,24 @@ public class GameStateHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerName;
     [SerializeField] private GameObject gameOverMenu;
 
+    //Get healthbar object
     [SerializeField] GameObject healthBar;
+
+    //get things to replace onDeath unity event
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject sceneryManager;
+    [SerializeField] GameObject gameOver;
+    [SerializeField] GameObject gameOverSound;
+
+    //get remaining things to replace onIngame event
+    [SerializeField] GameObject ui;
+    [SerializeField] GameObject play;
+    [SerializeField] GameObject controls;
+    [SerializeField] GameObject highscore;
+
 
     public float PlayerHealth;
     private bool m_InGame;
-
-    public UnityEvent<bool> onIngame;
-    public UnityEvent onDeath;
 
     [SerializeField]
     private PlayerInput inputManage;
@@ -63,7 +77,13 @@ public class GameStateHandler : MonoBehaviour
 
     public void Lost()
     {
-        onDeath.Invoke();
+        //replace onDeath here
+        player.SetActive(false);
+        sceneryManager.GetComponent<LevelSceneryManager>().EnableEnemySpawning(false);
+        UpdateHighScores();
+        gameOver.SetActive(true);
+        gameOverSound.GetComponent<SfxSoundLibraryUser>().PlaySound();
+
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         EliasManager.instance.Lost();
@@ -90,7 +110,12 @@ public class GameStateHandler : MonoBehaviour
         {
             m_InGame = value;
             inputManage.currentActionMap = inputManage.actions.FindActionMap(m_InGame ? "InGame" : "InMenu", true);
-            onIngame.Invoke(m_InGame);
+            //replace onIngame here
+            
+            sceneryManager.GetComponent<LevelSceneryManager>().EnableEnemySpawning(m_InGame);
+            ui.GetComponents<BooleanAnimator>()[1].OnBooleanInput(m_InGame);
+            player.SetActive(m_InGame);
+            player.GetComponent<OnEnableAnimatorReset>().ResetAnimator();
         }
     }
 
