@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using util.sound;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,14 +20,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashDelay = 0.5f;
     private float DashTimer;
     private bool Dashing;
-    public UnityEvent onSepperate;
-    public UnityEvent onConnect;
-    public UnityEvent onDashLeft;
-    public UnityEvent onDashRight;
-    public UnityEvent onDashUp;
-    
+
+    [SerializeField] SfxSoundLibraryUser splitSound;
+    [SerializeField] SfxSoundLibraryUser connectSound;
+
+    [Header("Fields for Combat")]
+
+    [SerializeField] private GameObject redProjectileOrigin, whiteProjectileOrigin;
+    [SerializeField] private GameObject redProjectile;
+    [SerializeField] private GameObject whiteProjectile;
+    [SerializeField] SfxSoundLibraryUser shootSound;
+    //private MovementAPI _movementAPI;
+    public float shootingSpeed = 20f;
+    [SerializeField] private float attackSpeed = 0.5f;
+
+    private BooleanAnimator[] animators;
+    private bool _shootingRed, _shootingWhite;
+    private bool _redDominant;
+    private float _lastShootTime = 0f;
+
     private void Start()
     {
+        //holds all the animators that are on the player
+        animators = GetComponents<BooleanAnimator>();
+
         movementAPI = GetComponent<MovementAPI>();
         moveSpeed = movementAPI.speed.x;
         var size = dimensions.size;
@@ -39,6 +56,34 @@ public class PlayerMovement : MonoBehaviour
     {
         if(DashTimer > 0f) DashTimer -= Time.deltaTime;
         movementAPI.MoveDirection = CheckBounds(movementAPI.MoveDirection);
+
+        //Update function from PlayerCombat
+        if (!(_shootingRed || _shootingWhite)) return;
+        if (_lastShootTime + attackSpeed > Time.time) return;
+
+        _lastShootTime = Time.time;
+
+        var proj = _redDominant ? redProjectile : whiteProjectile;
+        var transform1 = (_redDominant ? redProjectileOrigin : whiteProjectileOrigin).transform;
+        var projectile = Instantiate(proj, transform1.position, transform.rotation).GetComponent<MovementAPI>();
+        projectile.MoveDirection = Vector2.up + new Vector2(movementAPI.MoveDirection.x, 0f) * 0.3f;
+        projectile.speed = new Vector2(1, 1) * shootingSpeed;
+
+        shootSound.PlaySound();
+    }
+
+    //method from Player Combat
+    public void OnShootRed(InputAction.CallbackContext context)
+    {
+        _shootingRed = context.ReadValueAsButton();
+        _redDominant = _shootingRed;
+    }
+
+    //method from Player Combat
+    public void OnShootWhite(InputAction.CallbackContext context)
+    {
+        _shootingWhite = context.ReadValueAsButton();
+        _redDominant = !_shootingWhite;
     }
 
     private void OnEnable()
@@ -62,7 +107,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Dashing = true;
             DashTimer = dashDelay;
-            onDashLeft.Invoke();
+
+            //removal of the onDashLeft event
+            animators[1].OnBooleanInput(true);
+            animators[4].OnBooleanInput(true);
+
             movementAPI.MoveDirection = Vector2.left;
             movementAPI.speed += movementAPI.speed * Vector2.right * dashSpeed.x;
         }
@@ -75,7 +124,11 @@ public class PlayerMovement : MonoBehaviour
         {
             DashTimer = dashDelay;
             Dashing = true;
-            onDashRight.Invoke();
+
+            //removal of the onDashRight event
+            animators[2].OnBooleanInput(true);
+            animators[3].OnBooleanInput (true);
+            
             movementAPI.MoveDirection = Vector2.right;
             movementAPI.speed += movementAPI.speed * Vector2.right * dashSpeed.x;
         }
@@ -89,7 +142,11 @@ public class PlayerMovement : MonoBehaviour
         {
             DashTimer = dashDelay;
             Dashing = true;
-            onDashUp.Invoke();
+
+            //removale of onDashUp Event
+            animators[5].OnBooleanInput(true);
+            animators[6].OnBooleanInput(true);
+
             movementAPI.MoveDirection = Vector2.up;
             movementAPI.speed += movementAPI.speed * Vector2.up * dashSpeed.y;
         }
@@ -102,8 +159,21 @@ public class PlayerMovement : MonoBehaviour
         Dashing = false;
     }
 
-    public void OnSplit(InputAction.CallbackContext context) =>
-        (context.ReadValueAsButton() ? onSepperate : onConnect).Invoke();
+    //get rid of the onSepperate and onConnect events
+    public void OnSplit(InputAction.CallbackContext context)
+    {
+        if(context.ReadValueAsButton())
+        {
+            animators[0].OnBooleanInput(true);
+            splitSound.PlaySound();
+        }
+        else
+        {
+            animators[0].OnBooleanInput(false);
+            connectSound.PlaySound();
+
+        }
+    }
 
     public void LockMouse(PlayerInput playerInput)
     {
